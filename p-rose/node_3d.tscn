@@ -1,0 +1,192 @@
+[gd_scene load_steps=15 format=3 uid="uid://d1nagbnjb57ax"]
+
+[ext_resource type="Texture2D" uid="uid://dc8tg2vkend1e" path="res://Textures/grid_white_512x512.png" id="1_4u5ce"]
+[ext_resource type="Script" path="res://Petal.gd" id="1_l748t"]
+[ext_resource type="Texture2D" uid="uid://bosaoncumcx3d" path="res://Textures/checker_black_512x512.png" id="1_pcb32"]
+[ext_resource type="Script" path="res://Spatial.gd" id="2_5xygv"]
+[ext_resource type="Script" path="res://Spatial_first.gd" id="4_ncatd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hk3nx"]
+margin = 0.337
+size = Vector3(2.98328, 2.99377, 2.99805)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dl0mr"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtx80"]
+albedo_texture = ExtResource("1_pcb32")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.03526
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_vdsgh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hj0s2"]
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_4u5ce")
+uv1_scale = Vector3(50, 50, 50)
+uv1_triplanar = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nt6mo"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kg12n"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xh0gx"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_doixd"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1902, 1.50127, 4.41927)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000549316, 0.460283, -0.00732423)
+shape = SubResource("BoxShape3D_hk3nx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0.4574, 0)
+mesh = SubResource("BoxMesh_dl0mr")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtx80")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2815, 1.54015, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000549316, 0.460283, -0.00732423)
+shape = SubResource("BoxShape3D_hk3nx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0.4574, 0)
+mesh = SubResource("BoxMesh_dl0mr")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtx80")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.1972, 1.54015, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000549316, 0.460283, -0.00732423)
+shape = SubResource("BoxShape3D_hk3nx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0.4574, 0)
+mesh = SubResource("BoxMesh_dl0mr")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtx80")
+
+[node name="RigidBody3D4" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1134, 5.47723, 2.42343)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000549316, 0.460283, -0.00732423)
+shape = SubResource("BoxShape3D_hk3nx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0472431, 0.504832, 0.00468874)
+mesh = SubResource("BoxMesh_dl0mr")
+surface_material_override/0 = SubResource("StandardMaterial3D_gtx80")
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1000, 1.05592, -0.607369, -0.162741)
+cast_shadow = 0
+visibility_range_fade_mode = 1
+mesh = SubResource("BoxMesh_vdsgh")
+surface_material_override/0 = SubResource("StandardMaterial3D_hj0s2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nt6mo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.726071, 0.68762, 0, -0.68762, -0.726071, 0, 244.829, -258.166)
+shadow_enabled = true
+
+[node name="Petal" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33636, 4.8025)
+script = ExtResource("1_l748t")
+
+[node name="first_person_arm" type="SpringArm3D" parent="Petal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119245, 0.599752, -0.153906)
+spring_length = 0.5
+margin = 0.001
+script = ExtResource("4_ncatd")
+
+[node name="camera" type="Camera3D" parent="Petal/first_person_arm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0669798, 0.0610192, -0.2328)
+
+[node name="Panel" type="Panel" parent="Petal/first_person_arm/camera"]
+offset_right = 389.0
+offset_bottom = 66.0
+scale = Vector2(1, 1.01401)
+
+[node name="Label" type="Label" parent="Petal/first_person_arm/camera/Panel"]
+modulate = Color(0.309804, 0.756863, 0.411765, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 36.0
+offset_right = 98.0
+offset_bottom = 68.0
+text = "FPS: - "
+
+[node name="Label2" type="Label" parent="Petal/first_person_arm/camera/Panel"]
+layout_mode = 0
+offset_right = 191.0
+offset_bottom = 33.0
+text = "Diagnostics: "
+
+[node name="Label3" type="Label" parent="Petal/first_person_arm/camera/Panel"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 42.0
+offset_right = 232.0
+offset_bottom = 65.0
+text = "Speed: -"
+
+[node name="third_person_arm" type="SpringArm3D" parent="Petal"]
+transform = Transform3D(0.999745, 0, 0.0225653, -0.00751278, 0.94295, 0.33285, -0.0212779, -0.332935, 0.94271, 0.00612009, 2.18095, -0.482491)
+spring_length = 7.0
+margin = 0.2
+script = ExtResource("2_5xygv")
+
+[node name="camera" type="Camera3D" parent="Petal/third_person_arm"]
+transform = Transform3D(1, 2.79397e-08, -1.49012e-08, -9.31323e-10, 0.91781, 0.39702, 0, -0.39702, 0.91781, 0.115093, 2.76291, 4.51553)
+
+[node name="Panel" type="Panel" parent="Petal/third_person_arm/camera"]
+offset_right = 389.0
+offset_bottom = 66.0
+scale = Vector2(1, 1.01401)
+
+[node name="Label" type="Label" parent="Petal/third_person_arm/camera/Panel"]
+modulate = Color(0.309804, 0.756863, 0.411765, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 36.0
+offset_right = 98.0
+offset_bottom = 68.0
+text = "FPS: - "
+
+[node name="Label2" type="Label" parent="Petal/third_person_arm/camera/Panel"]
+layout_mode = 0
+offset_right = 191.0
+offset_bottom = 33.0
+text = "Diagnostics: "
+
+[node name="Label3" type="Label" parent="Petal/third_person_arm/camera/Panel"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 42.0
+offset_right = 232.0
+offset_bottom = 65.0
+text = "Speed: -"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Petal"]
+shape = SubResource("CylinderShape3D_kg12n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Petal"]
+mesh = SubResource("CylinderMesh_xh0gx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Petal/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.0141192, 0.9999, 0, -0.9999, 0.0141192, 0, 1.47842, 0)
+mesh = SubResource("PrismMesh_doixd")
